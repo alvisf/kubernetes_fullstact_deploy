@@ -31,9 +31,11 @@ If you have a Kubernetes service named frontend-service, you can use mongo-servi
 
 ### Backend
 ```kubectl apply -f server-deployment.yaml```
+
 ```kubectl apply -f server-service.yaml```
 
 ### Database
 ```kubectl apply -f mongo-deployment.yaml```
+
 ```kubectl apply -f mongo-service.yaml```
 
