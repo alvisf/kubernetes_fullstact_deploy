@@ -6,15 +6,15 @@ Build the Docker Image 🐳
 
 ### FrontEnd
 
-```docker build -t frontendvm .```
+`docker build -t frontend/frontendvm .`
 
 ### BackEnd
 
-```docker build -t backendvm .```
+`docker build -t server/backendvm .`
 
 ### Database
 
-```docker build -t mongo .```
+`docker build -t mongo/mongo .`
 
 So now we can scale it with microservice architecture.
 we are going to use Docker to containerise our application
@@ -25,17 +25,19 @@ Likewise, we can deploy the service from the YAML file.
 If you have a Kubernetes service named frontend-service, you can use mongo-service as the DNS name of your application. It’s the responsibility of Kubernetes to forward the request to the corresponding pod.
 
 ### FrontEnd
-```kubectl apply -f nginx-deployment.yaml```
 
-```kubectl apply -f nginx-service.yaml```
+`kubectl apply -f nginx-deployment.yaml`
+
+`kubectl apply -f nginx-service.yaml`
 
 ### Backend
-```kubectl apply -f server-deployment.yaml```
 
-```kubectl apply -f server-service.yaml```
+`kubectl apply -f server-deployment.yaml`
+
+`kubectl apply -f server-service.yaml`
 
 ### Database
-```kubectl apply -f mongo-deployment.yaml```
 
-```kubectl apply -f mongo-service.yaml```
+`kubectl apply -f mongo-deployment.yaml`
 
+`kubectl apply -f mongo-service.yaml`
